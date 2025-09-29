@@ -5,6 +5,7 @@ const path = require('path');
 
 // Import routes
 const scrapeRoutes = require('./routes/scrapeRoutes');
+const vibeRoutes = require('./routes/vibeRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -31,6 +32,7 @@ mongoose.connect('mongodb://localhost:27017/instagram_scraper', {
 const imageProxy = require('./routes/imageProxy');
 
 app.use('/api/scrape', scrapeRoutes);
+app.use('/api/vibe', vibeRoutes);
 app.use('/api', imageProxy);
 
 // Health check endpoint

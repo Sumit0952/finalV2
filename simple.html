@@ -3,25 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Scraper</title>
+    <title>Social Analytics Pro - Influencer Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>📸 Instagram Scraper</h1>
-            <p>Fetch Instagram profiles, posts, and reels data</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-chart-line brand-icon"></i>
+            <div class="brand-text">
+                <h1>Social Analytics Pro</h1>
+                <span>Influencer Dashboard</span>
+            </div>
         </div>
-
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="profile">👤 Profile</button>
-            <button class="tab-btn" data-tab="posts">📷 Posts</button>
-            <button class="tab-btn" data-tab="reels">🎬 Reels</button>
-            <button class="tab-btn" data-tab="analytics">📊 Analytics</button>
+        <div class="nav-menu">
+            <a href="#hero" class="nav-link active">Home</a>
+            <a href="#dashboard" class="nav-link">Analytics</a>
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
+    </nav>
 
-        <div class="content">
-            <div class="form-section">
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Transform Your
+                <span class="gradient-text">Social Media Analytics</span>
+            </h1>
+            <p class="hero-subtitle">
+                Unlock powerful insights from Instagram profiles, posts, and reels. 
+                Professional analytics dashboard for influencers and marketers.
+            </p>
+            
+            <!-- Search Container -->
+            <div class="search-container">
+                <div class="search-form">
+                    <div class="search-input-group">
+                        <i class="fas fa-at input-icon"></i>
+                        <input type="text" id="heroUsername" class="search-input" placeholder="Enter Instagram username (e.g., virat.kohli)" />
+                    </div>
+                    
+                    <div class="search-input-group" id="heroSessionGroup" style="display: none;">
+                        <i class="fas fa-key input-icon"></i>
+                        <input type="text" id="heroSessionId" class="search-input" placeholder="Session ID" />
+                    </div>
+                    
+                    <div class="search-input-group" id="heroMaxItemsGroup" style="display: none;">
+                        <i class="fas fa-hashtag input-icon"></i>
+                        <input type="number" id="heroMaxItems" class="search-input" value="20" min="1" max="100" placeholder="Max Items" />
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn-action btn-primary" id="heroScrapeBtn">
+                        <i class="fas fa-search btn-icon"></i>
+                        Start Analysis
+                    </button>
+                    <button class="btn-action btn-secondary" id="heroLoadBtn">
+                        <i class="fas fa-database btn-icon"></i>
+                        Load Data
+                    </button>
+                    <button class="btn-action btn-primary" id="heroScrapeAllBtn">
+                        <i class="fas fa-rocket btn-icon"></i>
+                        Complete Scan
+                    </button>
+                    <button class="btn-action btn-secondary" id="getStartedBtn">
+                        <i class="fas fa-arrow-down btn-icon"></i>
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <div class="floating-card card-1">
+                <i class="fas fa-users"></i> 10M+ Profiles Analyzed
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-chart-bar"></i> Real-time Analytics
+            </div>
+            <div class="floating-card card-3">
+                <i class="fas fa-shield-alt"></i> Secure & Private
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard">
+        <div class="dashboard-container">
+            <!-- Dashboard Navigation -->
+            <div class="dashboard-nav">
+                <button class="tab-btn active" data-tab="profile">
+                    <i class="fas fa-user"></i> Profile
+                </button>
+                <button class="tab-btn" data-tab="posts">
+                    <i class="fas fa-images"></i> Posts
+                </button>
+                <button class="tab-btn" data-tab="reels">
+                    <i class="fas fa-video"></i> Reels
+                </button>
+                <button class="tab-btn" data-tab="analytics">
+                    <i class="fas fa-chart-line"></i> Analytics
+                </button>
+            </div>
+
+            <!-- Legacy Form (hidden but functional) -->
+            <div class="legacy-form" style="display: none;">
                 <div class="input-group">
                     <label for="username">Instagram Username:</label>
                     <input type="text" id="username" placeholder="Enter username (e.g., virat.kohli)" />
@@ -40,28 +130,37 @@
                 <div class="button-group">
                     <button class="btn btn-primary" id="scrapeBtn">🔍 Scrape Data</button>
                     <button class="btn btn-secondary" id="loadBtn">📂 Load from Database</button>
-                    <button class="btn btn-primary" id="scrapeAllBtn" style="background: linear-gradient(135deg, #28a745, #20c997); border: none;">🚀 Scrape All Data</button>
+                    <button class="btn btn-primary" id="scrapeAllBtn">🚀 Scrape All Data</button>
                 </div>
             </div>
 
-            <div class="loading" id="loading">
-                <p>⏳ Loading data...</p>
+            <!-- Status Messages -->
+            <div class="status-container">
+                <div class="loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    <p>⏳ Loading data...</p>
+                </div>
+
+                <div class="error" id="error"></div>
+                <div class="success" id="success"></div>
             </div>
 
-            <div class="error" id="error"></div>
-            <div class="success" id="success"></div>
-
-            <div class="results-section">
-                <h2 class="results-title" id="resultsTitle">Results</h2>
-
+            <!-- Tab Content Areas -->
+            <div class="tab-content-container">
                 <!-- Profile Tab Content -->
                 <div class="tab-content active" id="profile-content">
+                    <div class="content-header">
+                        <h2><i class="fas fa-user-circle"></i> Profile Analytics</h2>
+                        <p>Comprehensive profile insights and statistics</p>
+                    </div>
                     <div class="profile-card" id="profileCard" style="display: none;">
                         <div class="profile-info">
                             <img class="profile-avatar" id="profileAvatar" src="" alt="Profile Picture" />
-                            <div class="profile-name" id="profileName"></div>
-                            <div class="profile-username" id="profileUsername"></div>
-                            <div class="profile-bio" id="profileBio"></div>
+                            <div class="profile-details">
+                                <div class="profile-name" id="profileName"></div>
+                                <div class="profile-username" id="profileUsername"></div>
+                                <div class="profile-bio" id="profileBio"></div>
+                            </div>
                             <div class="profile-stats">
                                 <div class="stat-item">
                                     <span class="stat-number" id="followersCount">0</span>
@@ -82,20 +181,41 @@
 
                 <!-- Posts Tab Content -->
                 <div class="tab-content" id="posts-content">
+                    <div class="content-header">
+                        <h2><i class="fas fa-images"></i> Posts Analysis</h2>
+                        <p>Visual content performance and engagement metrics</p>
+                    </div>
                     <div class="posts-grid" id="postsGrid"></div>
                 </div>
 
                 <!-- Reels Tab Content -->
                 <div class="tab-content" id="reels-content">
+                    <div class="content-header">
+                        <h2><i class="fas fa-video"></i> Reels Performance</h2>
+                        <p>Short-form video content analytics and trends</p>
+                    </div>
                     <div class="posts-grid" id="reelsGrid"></div>
                 </div>
 
                 <!-- Analytics Tab Content -->
                 <div class="tab-content" id="analytics-content">
+                    <div class="content-header">
+                        <h2><i class="fas fa-chart-line"></i> Advanced Analytics</h2>
+                        <p>Deep insights and performance metrics</p>
+                    </div>
                     <div id="analyticsContainer">
                         <div class="analytics-section">
                             <h3>📊 Engagement Analytics</h3>
                             <div class="analytics-cards" id="analyticsCards"></div>
+                        </div>
+                        <div class="analytics-section">
+                            <h3>🎭 Vibe Analysis</h3>
+                            <div class="vibe-analysis" id="vibeAnalysis">
+                                <div class="vibe-loading">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                    <span>Analyzing content vibes...</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="analytics-section">
                             <h3>📈 Content Performance</h3>
@@ -105,7 +225,27 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">Social Analytics Pro</div>
+            <p class="footer-description">
+                Professional social media analytics platform for influencers, marketers, and agencies. 
+                Transform your Instagram insights with powerful analytics.
+            </p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Support</a>
+                <a href="#" class="footer-link">API Documentation</a>
+            </div>
+            <div class="footer-copyright">
+                © 2025 Social Analytics Pro. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
