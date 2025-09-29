@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "instagram-scraper-api-collection",
+		"name": "Instagram Scraper API",
+		"description": "Complete API collection for Instagram scraping with MongoDB storage. Includes endpoints for scraping and retrieving profiles, posts, and reels.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health & Status",
+			"item": [
+				{
+					"name": "Health Check",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response has status OK\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status).to.eql(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/health",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"health"
+							]
+						},
+						"description": "Check if the server is running and healthy"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scraping Endpoints",
+			"item": [
+				{
+					"name": "Scrape Profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or error status\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 403, 404, 500]);",
+									"});",
+									"",
+									"pm.test(\"Response has success field\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"{{test_username}}\",\n  \"sessionId\": \"{{session_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scrape/profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scrape",
+								"profile"
+							]
+						},
+						"description": "Scrape Instagram profile and save to database. Returns profile info including followers, following, posts count, bio, etc."
+					},
+					"response": []
+				},
+				{
+					"name": "Scrape Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or error status\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 403, 404, 500]);",
+									"});",
+									"",
+									"pm.test(\"Response has success field\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"{{test_username}}\",\n  \"sessionId\": \"{{session_id}}\",\n  \"maxPosts\": 10\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scrape/posts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scrape",
+								"posts"
+							]
+						},
+						"description": "Scrape Instagram posts and save to database. Returns post URLs, thumbnails, descriptions, likes, and comments."
+					},
+					"response": []
+				},
+				{
+					"name": "Scrape Reels",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or error status\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 403, 404, 500]);",
+									"});",
+									"",
+									"pm.test(\"Response has success field\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"{{test_username}}\",\n  \"sessionId\": \"{{session_id}}\",\n  \"maxReels\": 10\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scrape/reels",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scrape",
+								"reels"
+							]
+						},
+						"description": "Scrape Instagram reels and save to database. Note: Most engagement data will be null due to Instagram restrictions."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Retrieval",
+			"item": [
+				{
+					"name": "Get Profile from DB",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+									"});",
+									"",
+									"pm.test(\"Response has success field\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/scrape/profile/{{test_username}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scrape",
+								"profile",
+								"{{test_username}}"
+							]
+						},
+						"description": "Retrieve profile data from database without scraping"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts from DB",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+									"});",
+									"",
+									"pm.test(\"Response has success field\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/scrape/posts/{{test_username}}?limit=20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scrape",
+								"posts",
+								"{{test_username}}"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20",
+									"description": "Number of posts to retrieve (default: 50)"
+								}
+							]
+						},
+						"description": "Retrieve posts data from database without scraping"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reels from DB",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+									"});",
+									"",
+									"pm.test(\"Response has success field\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('success');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/scrape/reels/{{test_username}}?limit=20",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scrape",
+								"reels",
+								"{{test_username}}"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "20",
+									"description": "Number of reels to retrieve (default: 50)"
+								}
+							]
+						},
+						"description": "Retrieve reels data from database without scraping"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Error Testing",
+			"item": [
+				{
+					"name": "Test Invalid Username",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"\",\n  \"sessionId\": \"{{session_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scrape/profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scrape",
+								"profile"
+							]
+						},
+						"description": "Test error handling for empty username"
+					},
+					"response": []
+				},
+				{
+					"name": "Test Missing Session ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"{{test_username}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/scrape/profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scrape",
+								"profile"
+							]
+						},
+						"description": "Test error handling for missing session ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Test Non-existent Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/scrape/profile/nonexistentuser12345",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"scrape",
+								"profile",
+								"nonexistentuser12345"
+							]
+						},
+						"description": "Test retrieval of non-existent profile from database"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "test_username",
+			"value": "virat.kohli",
+			"type": "string"
+		},
+		{
+			"key": "session_id",
+			"value": "YOUR_INSTAGRAM_SESSION_ID_HERE",
+			"type": "string"
+		}
+	]
+}

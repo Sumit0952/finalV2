@@ -1,0 +1,47 @@
+{
+  "username": "@sportsgully",
+  "totalReels": 4,
+  "scrapingNote": "Instagram has strong anti-bot measures. This scraper gets reel URLs and basic info, but detailed data (likes, comments, captions) is often blocked.",
+  "reels": [
+    {
+      "Reel #": 1,
+      "Reel URL": "https://www.instagram.com/sportsgully/reel/DOc1jm-kb7O/",
+      "Image URL": "Not available",
+      "Caption": "Not available (Instagram blocks detailed scraping)",
+      "Likes Count": "Not available (Instagram blocks detailed scraping)",
+      "Comments Count": "Not available (Instagram blocks detailed scraping)",
+      "Post Date": "Not available (Instagram blocks detailed scraping)",
+      "Note": "Instagram has strong anti-bot measures that prevent detailed reel scraping"
+    },
+    {
+      "Reel #": 2,
+      "Reel URL": "https://www.instagram.com/sportsgully/reel/DOLiL1EkddM/",
+      "Image URL": "Not available",
+      "Caption": "Not available (Instagram blocks detailed scraping)",
+      "Likes Count": "Not available (Instagram blocks detailed scraping)",
+      "Comments Count": "Not available (Instagram blocks detailed scraping)",
+      "Post Date": "Not available (Instagram blocks detailed scraping)",
+      "Note": "Instagram has strong anti-bot measures that prevent detailed reel scraping"
+    },
+    {
+      "Reel #": 3,
+      "Reel URL": "https://www.instagram.com/sportsgully/reel/DODmwETiPCW/",
+      "Image URL": "Not available",
+      "Caption": "Not available (Instagram blocks detailed scraping)",
+      "Likes Count": "Not available (Instagram blocks detailed scraping)",
+      "Comments Count": "Not available (Instagram blocks detailed scraping)",
+      "Post Date": "Not available (Instagram blocks detailed scraping)",
+      "Note": "Instagram has strong anti-bot measures that prevent detailed reel scraping"
+    },
+    {
+      "Reel #": 4,
+      "Reel URL": "https://www.instagram.com/sportsgully/reel/DN2KFgI4ifQ/",
+      "Image URL": "Not available",
+      "Caption": "Not available (Instagram blocks detailed scraping)",
+      "Likes Count": "Not available (Instagram blocks detailed scraping)",
+      "Comments Count": "Not available (Instagram blocks detailed scraping)",
+      "Post Date": "Not available (Instagram blocks detailed scraping)",
+      "Note": "Instagram has strong anti-bot measures that prevent detailed reel scraping"
+    }
+  ]
+}

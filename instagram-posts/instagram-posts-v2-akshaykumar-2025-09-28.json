@@ -1,0 +1,23 @@
+{
+  "username": "@akshaykumar",
+  "totalPosts": 2,
+  "scrapingNote": "Enhanced scraper with proper DOM extraction for post_link, post_thumb, post_desc, post_likes, post_comments",
+  "posts": [
+    {
+      "Post #": 1,
+      "Post Link": "https://www.instagram.com/starstudio18/p/DOxan10E-A4/",
+      "Post Thumbnail": "https://instagram.fpnq7-5.fna.fbcdn.net/v/t51.2885-15/550430300_18533539228011561_2806730348630470799_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTgwMC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=instagram.fpnq7-5.fna.fbcdn.net&_nc_cat=109&_nc_oc=Q6cZ2QEgguRApPG56Nhos1Mq7yRzo-9F-8jfbdfm_UmNHQeylVTHfN3sRLtV69SazyFvVN3Mobq2gn2N9JXcHmYE1i8w&_nc_ohc=aV1pbryQtPgQ7kNvwGb-omr&_nc_gid=X4aBIg4FDgr85QAQlqj1Xw&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=MzcyNDg3NTQ1Mzg2MzAyNjc0NA%3D%3D.3-ccb7-5&oh=00_AfagEZhwIpvO6Aue3pi-j8gT6698QcSAiLkZ0C0eqSc9Ig&oe=68DEF7F0&_nc_sid=7a9f4b",
+      "Post Description": "Photo shared by Star Studio18 on September 18, 2025 tagging @arshad_warsi, and @akshaykumar. कदाचित ३ लोक आणि मजकूर ची इमेज असू शकते.",
+      "Post Likes": "98.9K",
+      "Post Comments": "783"
+    },
+    {
+      "Post #": 2,
+      "Post Link": "https://www.instagram.com/akshaykumar/p/DOnr-uJE-is/",
+      "Post Thumbnail": "https://instagram.fpnq7-8.fna.fbcdn.net/v/t51.2885-15/549261926_18531677158017385_5823859593843383531_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjEwNDV4MTE0NC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=instagram.fpnq7-8.fna.fbcdn.net&_nc_cat=1&_nc_oc=Q6cZ2QEgguRApPG56Nhos1Mq7yRzo-9F-8jfbdfm_UmNHQeylVTHfN3sRLtV69SazyFvVN3Mobq2gn2N9JXcHmYE1i8w&_nc_ohc=mTVqNosImr8Q7kNvwHZpPTG&_nc_gid=X4aBIg4FDgr85QAQlqj1Xw&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=MzcyMjEzNzA0MzE5Njk2Mjk4OA%3D%3D.3-ccb7-5&oh=00_AfZlwk8jpBRiXWYR4BjTBD5QWmF4OioeNA3VZdIToo2O8Q&oe=68DEE079&_nc_sid=7a9f4b",
+      "Post Description": "Photo by Akshay Kumar on September 15, 2025. कदाचित २ लोक आणि मजकूर ची इमेज असू शकते.",
+      "Post Likes": "1.3M",
+      "Post Comments": "7,666"
+    }
+  ]
+}

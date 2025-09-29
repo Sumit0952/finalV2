@@ -1,0 +1,39 @@
+{
+  "username": "@virat.kohli",
+  "totalPosts": 4,
+  "scrapingNote": "Enhanced scraper with proper DOM extraction for post_link, post_thumb, post_desc, post_likes, post_comments",
+  "posts": [
+    {
+      "Post #": 1,
+      "Post Link": "https://www.instagram.com/virat.kohli/p/DPG-14viCQR/",
+      "Post Thumbnail": "https://scontent-maa3-2.cdninstagram.com/v/t51.2885-15/554800141_18532254064064508_6940929483385591374_n.jpg?stp=dst-jpegr_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTkyMC5oZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-maa3-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QGVeOZvIwXkUJNj-5HA1TjxPZzKM8-lcAG_Iq1nldgLQESzcZ993IUhcHSf_sOwQdM&_nc_ohc=Mhrontz1wEgQ7kNvwHMyE-N&_nc_gid=jGp9q1rCx1zYBuZZhIZJuw&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=MzczMDk0NTcyMzI2NTk4MzUwNQ%3D%3D.3-ccb7-5&oh=00_AfaeqZfCZDyC4xDBFIaW2CyuEeEdKCQxWjT5HJaF79y9FQ&oe=68DEF809&_nc_sid=7a9f4b",
+      "Post Description": "Photo by Virat Kohli on September 27, 2025. २ लोक, दाढी, केस, लोक हसत आहेत, टर्टल नेक आणि मजकूर ची सेल्फी असू शकते.",
+      "Post Likes": "10.6M",
+      "Post Comments": "305K"
+    },
+    {
+      "Post #": 2,
+      "Post Link": "https://www.instagram.com/virat.kohli/p/DK7TPPTNsic/",
+      "Post Thumbnail": "https://scontent-maa3-2.cdninstagram.com/v/t51.2885-15/506378516_18513982099064508_5755847656407504990_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjEwNjZ4OTU5LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=scontent-maa3-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QGVeOZvIwXkUJNj-5HA1TjxPZzKM8-lcAG_Iq1nldgLQESzcZ993IUhcHSf_sOwQdM&_nc_ohc=CTLBdt4x844Q7kNvwHJTzRv&_nc_gid=jGp9q1rCx1zYBuZZhIZJuw&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=MzY1NTYwMDEzMjY0NTYzNjI1Mg%3D%3D.3-ccb7-5&oh=00_AfZgchOvhyLUqTH4Y2yjMfe_UtcZDZvm0wrkCoRScU74Sw&oe=68DEF6B7&_nc_sid=7a9f4b",
+      "Post Description": "Photo by Virat Kohli on June 15, 2025. फोटोचा तपशील उपलब्ध नाही..",
+      "Post Likes": "13M",
+      "Post Comments": "202K"
+    },
+    {
+      "Post #": 3,
+      "Post Link": "https://www.instagram.com/virat.kohli/p/DKfKQnwSeKD/",
+      "Post Thumbnail": "https://scontent-maa3-3.cdninstagram.com/v/t51.2885-15/504194775_18512011066064508_2145554639666432583_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0uaW1hZ2VfdXJsZ2VuLjEwODB4MTA4MC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-maa3-3.cdninstagram.com&_nc_cat=100&_nc_oc=Q6cZ2QGVeOZvIwXkUJNj-5HA1TjxPZzKM8-lcAG_Iq1nldgLQESzcZ993IUhcHSf_sOwQdM&_nc_ohc=TJBKTEfYVoUQ7kNvwHbgYeJ&_nc_gid=jGp9q1rCx1zYBuZZhIZJuw&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=MzY0NzY3OTMyOTQxNDY1MzA5NQ%3D%3D.3-ccb7-5&oh=00_Afb7fX0UZeCH1VfM0V6QiBY6bP41w9edpcPH9Y-ZwPpLxQ&oe=68DF022F&_nc_sid=7a9f4b",
+      "Post Description": "At a loss for words. Absolutely gutted 💔",
+      "Post Likes": "7.2M",
+      "Post Comments": "97.3K"
+    },
+    {
+      "Post #": 4,
+      "Post Link": "https://www.instagram.com/virat.kohli/p/DKeg3xsRLPM/",
+      "Post Thumbnail": "https://scontent-maa3-2.cdninstagram.com/v/t51.2885-15/502948673_18511957453064508_6126600878338384971_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTA1OC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-maa3-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QGVeOZvIwXkUJNj-5HA1TjxPZzKM8-lcAG_Iq1nldgLQESzcZ993IUhcHSf_sOwQdM&_nc_ohc=yqgvFpSAzHAQ7kNvwET7_eL&_nc_gid=jGp9q1rCx1zYBuZZhIZJuw&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=MzY0NzQ5NzMxODYzMjMwNTYxMg%3D%3D.3-ccb7-5&oh=00_AfYb4gzcIV81QjNKb9pg0O3B9pnYvspusGVn1OMAwxCeBA&oe=68DEEF9E&_nc_sid=7a9f4b",
+      "Post Description": "Photo by Virat Kohli on June 04, 2025. फोटोचा तपशील उपलब्ध नाही..",
+      "Post Likes": "19.5M",
+      "Post Comments": "316K"
+    }
+  ]
+}
