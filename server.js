@@ -6,6 +6,7 @@ const path = require('path');
 // Import routes
 const scrapeRoutes = require('./routes/scrapeRoutes');
 const vibeRoutes = require('./routes/vibeRoutes');
+const imageProxy = require('./routes/imageProxy');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -15,13 +16,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/instagram_scraper', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+// MongoDB Atlas Connection (Hardcoded)
+const MONGO_URI = 'mongodb+srv://skr:NOvZfdF9Z6y81zHU@cluster0.cf1jwrf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/instagram-scraper';
+
+mongoose.connect(MONGO_URI)
 .then(() => {
-    console.log('✅ Connected to MongoDB successfully!');
+    console.log('✅ Connected to MongoDB Atlas successfully!');
 })
 .catch((error) => {
     console.error('❌ MongoDB connection error:', error);
@@ -29,8 +29,6 @@ mongoose.connect('mongodb://localhost:27017/instagram_scraper', {
 });
 
 // Routes
-const imageProxy = require('./routes/imageProxy');
-
 app.use('/api/scrape', scrapeRoutes);
 app.use('/api/vibe', vibeRoutes);
 app.use('/api', imageProxy);
@@ -63,7 +61,7 @@ app.use((error, req, res, next) => {
 });
 
 // Start server
-app.listen(PORT,'0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
     console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
     console.log('📡 Available endpoints:');

@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeButtons();
     
     // Auto-fill session ID (hardcoded) for both forms
-    const hardcodedSessionId = '55466061771%3AscBYubvUTY1oNC%3A4%3AAYjwp1HObXrl1llo7XXrHfTBCcsgyLMytEdNN_JfyQ';
+    const hardcodedSessionId = '77230796546%3AwieAbSVxQ9BjoP%3A21%3AAYhoUfVg1BlYp7_CcoJTGx4FvrpcJoxq8VgSjnK9gQ';
     
     if (elements.sessionId) {
         elements.sessionId.value = hardcodedSessionId;
