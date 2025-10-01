@@ -1,6 +1,9 @@
 // Global variables
 let currentTab = 'profile';
-const API_BASE_URL = 'http://localhost:3000/api';
+// Dynamic API URL - uses current host when deployed, localhost for development
+const API_BASE_URL = window.location.hostname === 'localhost' ? 
+    'http://localhost:3000/api' : 
+    `${window.location.protocol}//${window.location.host}/api`;
 
 // DOM elements
 const elements = {
@@ -32,6 +35,8 @@ const elements = {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('🔗 API Base URL:', API_BASE_URL);
+    console.log('🌍 Current hostname:', window.location.hostname);
     initializeNavigation();
     initializeTabs();
     initializeButtons();
