@@ -176,17 +176,17 @@ function formatProfileData(data, username) {
     try {
         // 🔧 CHANGE THESE VALUES TO SCRAPE DIFFERENT PROFILES
         const username = 'just_rishuuuuu'; // Replace with any Instagram username
-        const sessionId = 'YOUR SESSION ID HERE'; // Replace with your Instagram session ID
+        const sessionId = '77230796546%3AwieAbSVxQ9BjoP%3A21%3AAYh8U8dvo3TJ3loA48EbYEYpraBhs9n6bizTNG0GpQ'; // Replace with your Instagram session ID
         
         // Validate session ID
-        if (sessionId === 'YOUR SESSION ID HERE') {
+        if (sessionId === '77230796546%3AwieAbSVxQ9BjoP%3A21%3AAYh8U8dvo3TJ3loA48EbYEYpraBhs9n6bizTNG0GpQ') {
             console.error('❌ Please provide a valid Instagram session ID!');
             console.log('📝 To get your session ID:');
             console.log('1. Open Instagram in your browser and log in');
             console.log('2. Open Developer Tools (F12)');
             console.log('3. Go to Application/Storage tab > Cookies > https://www.instagram.com');
             console.log('4. Find the "sessionid" cookie and copy its value');
-            console.log('5. Replace YOUR SESSION ID HERE with that value');
+            console.log('5. Replace the session ID in the code with that value');
             return;
         }
         

@@ -409,7 +409,7 @@ async function scrapeProfilePosts(username, maxPosts = 10, authOptions = {}) {
         // 🔐 AUTHENTICATION OPTIONS (Choose one method or leave all null for guest access)
         const authOptions = {
             // Method 1: Session ID (Recommended - most reliable)
-            sessionId: 'your_session_id_here', // Get this from your browser's Instagram cookies
+            sessionId: '77230796546%3AwieAbSVxQ9BjoP%3A21%3AAYh8U8dvo3TJ3loA48EbYEYpraBhs9n6bizTNG0GpQ', // Get this from your browser's Instagram cookies
         };
         
         console.log(`🚀 Starting Instagram reels scraping for @${username}...`);

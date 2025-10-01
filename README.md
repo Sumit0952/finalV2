@@ -47,7 +47,7 @@ Content-Type: application/json
 
 {
   "username": "virat.kohli",
-  "sessionId": "your_instagram_session_id"
+  "sessionId": "77230796546%3AwieAbSVxQ9BjoP%3A21%3AAYh8U8dvo3TJ3loA48EbYEYpraBhs9n6bizTNG0GpQ"
 }
 ```
 
@@ -58,7 +58,7 @@ Content-Type: application/json
 
 {
   "username": "virat.kohli",
-  "sessionId": "your_instagram_session_id",
+  "sessionId": "77230796546%3AwieAbSVxQ9BjoP%3A21%3AAYh8U8dvo3TJ3loA48EbYEYpraBhs9n6bizTNG0GpQ",
   "maxPosts": 20
 }
 ```
@@ -70,7 +70,7 @@ Content-Type: application/json
 
 {
   "username": "virat.kohli",
-  "sessionId": "your_instagram_session_id",
+  "sessionId": "77230796546%3AwieAbSVxQ9BjoP%3A21%3AAYh8U8dvo3TJ3loA48EbYEYpraBhs9n6bizTNG0GpQ",
   "maxReels": 20
 }
 ```
@@ -187,7 +187,7 @@ const response = await fetch('http://localhost:3000/api/scrape/posts', {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     username: 'virat.kohli',
-    sessionId: 'your_session_id_here',
+    sessionId: '77230796546%3AwieAbSVxQ9BjoP%3A21%3AAYh8U8dvo3TJ3loA48EbYEYpraBhs9n6bizTNG0GpQ',
     maxPosts: 10
   })
 });
