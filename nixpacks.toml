@@ -1,0 +1,19 @@
+{
+  "providers": ["node"],
+  "buildCommand": "npm ci",
+  "startCommand": "npm start",
+  "nixPkgs": [
+    "nodejs_18",
+    "chromium",
+    "nss",
+    "freetype",
+    "freetype-dev",
+    "harfbuzz",
+    "ca-certificates",
+    "ttf-freefont"
+  ],
+  "variables": {
+    "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true",
+    "PUPPETEER_EXECUTABLE_PATH": "/nix/store/*-chromium-*/bin/chromium"
+  }
+}
